@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#101a2c">
+  <title>Falcone Key Generator</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div id="loginScreen" class="login-wrap">
+    <form id="loginForm" class="login-card">
+      <div class="brand-mark">FK</div>
+      <p class="eyebrow">LOCAL BROWSER PROTOTYPE</p>
+      <h1>Falcone <span>Key Generator</span></h1>
+      <p class="muted">Activation management workspace</p>
+      <label for="loginUser">Username</label><input id="loginUser" autocomplete="username" required value="owner">
+      <label for="loginPass">Password</label><input id="loginPass" type="password" autocomplete="current-password" required value="falcone123">
+      <button class="btn primary full" type="submit">Sign in</button>
+      <p id="loginError" class="error" role="alert"></p>
+      <details><summary>Demo accounts</summary><p><b>Owner</b> owner / falcone123</p><p><b>Manager</b> manager / demo123</p><p><b>Cashier</b> cashier / demo123</p><small>Fictional accounts only. Browser-only login is not secure authentication.</small></details>
+    </form>
+  </div>
+
+  <div id="appShell" class="shell hidden">
+    <aside class="sidebar" id="sidebar">
+      <div class="brand"><div class="brand-mark small">FK</div><div><b>FALCONE</b><small>KEY GENERATOR</small></div></div>
+      <div class="profile-mini"><div class="avatar" id="userAvatar">O</div><div><b id="userName">Owner</b><small id="userRole">Owner</small></div></div>
+      <nav id="nav">
+        <button data-page="dashboard" class="nav-item active">▦ <span>Dashboard</span></button>
+        <button data-page="generate" class="nav-item">✦ <span>Generate Code</span></button>
+        <button data-page="demo" class="nav-item">◷ <span>Demo History</span></button>
+        <button data-page="lifetime" class="nav-item">♛ <span>Lifetime History</span></button>
+        <button data-page="apps" class="nav-item owner-only">▣ <span>App Management</span></button>
+        <button data-page="customers" class="nav-item owner-only">♙ <span>Customer Details</span></button>
+        <button data-page="users" class="nav-item owner-only">♧ <span>Users & Roles</span></button>
+        <button data-page="company" class="nav-item owner-only">◈ <span>Company Profile</span></button>
+        <button data-page="settings" class="nav-item owner-only">⚙ <span>Settings & Backup</span></button>
+      </nav>
+      <div class="sidebar-bottom"><span class="local-dot"></span> Stored on this browser <button id="logoutBtn" class="btn ghost full">↪ Sign out</button></div>
+    </aside>
+    <main class="main">
+      <header class="topbar"><button id="menuBtn" class="icon-btn" aria-label="Toggle navigation">☰</button><div><p class="eyebrow">WORKSPACE</p><h2 id="pageTitle">Dashboard</h2></div><div class="top-actions"><span class="local-pill">● Local prototype</span><span id="topUser" class="top-user">Owner</span></div></header>
+      <div id="toast" class="toast" role="status" aria-live="polite"></div>
+      <section id="pageContent" class="content"></section>
+    </main>
+  </div>
+  <dialog id="detailDialog" class="dialog"><div id="dialogContent"></div><form method="dialog"><button class="btn secondary">Close</button></form></dialog>
+  <div id="printRoot" class="print-doc"></div>
+  <script type="module" src="js/app.js"></script>
+</body>
+</html>
